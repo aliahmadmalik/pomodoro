@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- My JS -->
+    <script src="main.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js"></script>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>23onMe Timer</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data/favicon.png" >
+  </head>
+  <body onload="template()">
+    <div class="container">
+      <!-- Heading -->
+      <div class="text-center heading">
+        <h1>23onMe Timer </h1><p>Brought to you by <a style="color: red; font-size: large;" href="https://www.businessyoga.co.uk/" target="_blank">
+          <img alt="" src="data/by.png" width="150" height="25">
+        </a></p>
+      </div>
+      
+      <!-- Main Timer -->
+      <div class="container timer">
+        
+        <div class="row">
+          <div class="col-5">
+            <b><p id="minutes"></p></b>
+          </div>
+          <div class="col-2">
+            <b><p>:</p></b>
+          </div>
+          <div class="col-5">
+            <b><p id="seconds"></p></b>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Start Button and reset button-->
+      <div class="conatiner d-flex justify-content-center">
+        <select id="time">
+          <option value="25" selected>25 Min</option>
+          <option value="15">15 Min</option>
+          <option value="5">5 Min</option>
+        </select>
+        <button class="btn" id="start">
+          <i class="fas fa-play fa-2x"></i>
+        </button>
+        <a id="reset"><i class="fas fa-redo-alt fa-2x"></i></a>
+      </div>
+
+      <br>
+
+      <!-- Finished Message -->
+      <div class="my-5, show_message">
+        <h2 id="done" class="text-center">Click The Play button to Start</h2>
+        <h3 id="completed" class="text-center"></h3>
+        <h3 id="current" class="text-center"></h3>
+      </div>
+
+    </div>
+  </body>
+</html>
