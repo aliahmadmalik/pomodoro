@@ -47,15 +47,18 @@ body {
 
 /* play and reset icons */
 .fa-play,
-.fa-redo-alt {
+.fa-redo-alt,
+.fa-change {
   color: #e3f6f5;
   border: 2px solid transparent;
   padding: 1rem;
   border-radius: 2rem;
+  font-size: 10px;
 }
 
 .fa-play:hover,
-.fa-redo-alt:hover {
+.fa-redo-alt:hover,
+.fa-change:hover {
   color: #bae8e8;
   border: 2px solid #bae8e8;
   transition: 0.3s ease;
@@ -65,11 +68,12 @@ body {
 /* Make the message visible */
 .show_message {
   display: block;
-  padding: 1rem 0;
   color: #272343;
   background: #e3f6f5;
   border-radius: 0.5rem;
   transition: 0.5s ease;
+  width: 70%;
+  margin: auto;
 }
 #link {
   color: #ffffff;
@@ -77,4 +81,79 @@ body {
 #time {
   margin: 1rem;
   color: black;
+}
+
+/* confirmation box */
+.reset-popup,
+.time-popup,
+.break-popup {
+  display: none;
+  position: fixed;
+  color: #272343;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  overflow: auto;
+  width: 400px;
+  height: 200px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 17px;
+  background-color: whitesmoke;
+}
+
+.bttn,
+.time-btn,
+.break-btn {
+  background-color: #359238;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 170px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 5px;
+  float: left;
+}
+.cancel,
+.time-cancel,
+.break-cancel {
+  background-color: red;
+  margin-left: 20px;
+}
+.bttn:hover,
+.time-btn:hover,
+.break-btn:hover {
+  opacity: 0.8;
+}
+.hide-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  background: rgba(0, 0, 0, 0.5);
+}
+/*flip-box*/
+.collapse,
+.flip-btn {
+  display: block;
+  width: 70%;
+  height: auto;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  padding: 0px;
+  margin: auto;
+  background-color: black;
+}
+.flip-btn {
+  cursor: pointer;
+  color: red;
+}
+.collapse {
+  text-align: justify;
+  padding: 10px;
 }

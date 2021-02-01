@@ -32,57 +32,146 @@
 
     <title>23onMe Timer</title>
     <!-- Favicon -->
-    <link rel="icon" href="data/favicon.png" >
+    <link rel="icon" href="data/favicon.png" />
   </head>
+
   <body onload="template()">
     <div class="container">
       <!-- Heading -->
       <div class="text-center heading">
-        <h1>23onMe Timer </h1><p>Brought to you by <a style="color: red; font-size: large;" href="https://www.businessyoga.co.uk/" target="_blank">
-          <img alt="" src="data/by.png" width="150" height="25">
-        </a></p>
+        <h1>23onMe Timer</h1>
+        <p>
+          Brought to you by
+          <a
+            style="color: red; font-size: large"
+            href="https://www.businessyoga.co.uk/"
+            target="_blank"
+          >
+            <img alt="" src="data/by.png" width="150" height="25" />
+          </a>
+        </p>
       </div>
-      
+
       <!-- Main Timer -->
       <div class="container timer">
-        
         <div class="row">
           <div class="col-5">
-            <b><p id="minutes"></p></b>
+            <b>
+              <p id="minutes"></p>
+            </b>
           </div>
           <div class="col-2">
-            <b><p>:</p></b>
+            <b>
+              <p>:</p>
+            </b>
           </div>
           <div class="col-5">
-            <b><p id="seconds"></p></b>
+            <b>
+              <p id="seconds"></p>
+            </b>
           </div>
         </div>
+
+        <!-- Div to hide popup-->
+        <div class="hide-popup" id="hide-popup" onclick="hide()"></div>
+
+        <!-- Reset button confirmation box-->
+        <div class="reset-popup" id="myForm">
+          <h3>it will reset the timer. Click ok to confirm</h3>
+          <button class="bttn" id="ok">OK</button>
+          <button class="bttn cancel" id="cancel">Cancel</button>
+        </div>
+        <!-- End of RestSet-->
+
+        <!-- Set Timer confirmation box-->
+        <div class="time-popup" id="time-popup">
+          <label for="1"
+            ><input
+              type="radio"
+              id="r1"
+              name="chng"
+              value="1"
+              checked
+            />25,5|25,5|25,5|25,23</label
+          ><br />
+          <label for="2"
+            ><input
+              type="radio"
+              id="r2"
+              name="chng"
+              value="2"
+            />25,5|25,5|25,5|25,15</label
+          >
+          <label for="3"
+            ><input
+              type="radio"
+              id="r3"
+              name="chng"
+              value="3"
+            />23,3|23,3|23,3|23,11</label
+          >
+          <button class="time-btn" id="change">OK</button>
+          <button class="time-btn time-cancel" id="same">Cancel</button>
+        </div>
+        <!-- End of Set Timer-->
+
+        <!-- Break Time Popup-->
+        <div class="break-popup" id="break-popup">
+          <h3>Take a Business Yoga signature 23onME session</h3>
+          <button class="break-btn" id="yoga">OK</button>
+          <button class="break-btn break-cancel" id="noYoga">Cancel</button>
+        </div>
+        <!-- End of RestSet-->
+      </div>
+    </div>
+
+    <br />
+
+    <!-- Start Button and reset button-->
+    <div class="conatiner d-flex justify-content-center">
+      <button class="btn" id="start" onclick="time()">
+        <i class="fas fa-change fa-2x"><h5>Change Timer</h5></i>
+      </button>
+      <button class="btn" id="start" onclick="startTimer()">
+        <i class="fas fa-play fa-2x"></i>
+      </button>
+      <a id="reset" onclick="reset()"><i class="fas fa-redo-alt fa-2x"></i></a>
+    </div>
+
+    <!-- Finished Message -->
+    <div class="my-5, show_message">
+      <h2 id="done" class="text-center">Click The Play button to Start</h2>
+      <h3 id="completed" class="text-center"></h3>
+      <h3 id="current" class="text-center"></h3>
+    </div>
+
+    <!-- Flip Box -->
+    <div class="flip-Box">
+      <div class="flip-btn">
+        <a data-toggle="collapse" data-target="#demo"> How It Works? </a>
       </div>
 
-      <br>
-
-      <!-- Start Button and reset button-->
-      <div class="conatiner d-flex justify-content-center">
-        <select id="time">
-          <option value="25" selected>25 Min</option>
-          <option value="15">15 Min</option>
-          <option value="5">5 Min</option>
-        </select>
-        <button class="btn" id="start">
-          <i class="fas fa-play fa-2x"></i>
-        </button>
-        <a id="reset"><i class="fas fa-redo-alt fa-2x"></i></a>
+      <div id="demo" class="collapse">
+        <p>
+          The <b>Change Timer</b> button is used to select the session and
+          break. time.there are three options: <br />
+          1. |session time, break time|25,5|25,5|25,5|25,23| <i>Default</i
+          ><br />
+          2. |session time, break time|25,5|25,5|25,5|25,23| <br />
+          3. |session time, break time|25,5|25,5|25,5|25,23| <br />
+          The <b>Play</b> button is use to start the timer. <br />
+          The <b>Reset</b> buttont will reset the timer. <br />
+          >>when you play the timer, it completes four sessions continously and
+          then stops. i.e session,break and then next session and so on (last
+          break will be longer). you can take
+          <a href="https://www.businessyoga.co.uk/" target="_blank"
+            ><i>businessyoga</i></a
+          >
+          session with us during the break time. <br />
+          After the cycle of four sessions you have to reset the timer to start
+          again.
+        </p>
       </div>
-
-      <br>
-
-      <!-- Finished Message -->
-      <div class="my-5, show_message">
-        <h2 id="done" class="text-center">Click The Play button to Start</h2>
-        <h3 id="completed" class="text-center"></h3>
-        <h3 id="current" class="text-center"></h3>
-      </div>
-
     </div>
   </body>
 </html>
