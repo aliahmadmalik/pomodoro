@@ -195,7 +195,7 @@ var time = function () {
 
     // Add the message to the html
     document.getElementById("done").innerHTML =
-      "Pomodoro timer change.Play again";
+      "23onMe Timer change.Play again";
     document.getElementById("current").innerHTML = "";
     timer = null;
 
